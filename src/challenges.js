@@ -15,22 +15,27 @@ console.log(calcArea());
 
 // Desafio 3
 function splitSentence(neWPhrase) {
-  let phrase = neWPhrase.split(" ");
+  let phrase = neWPhrase.split(' ');
   return phrase;
 }
-console.log(splitSentence("go Trybe"));
+console.log(splitSentence('go Trybe'));
 
 // Desafio 4
 function concatName(fullName) {
   let firstName = fullName[0];
   let lastName = fullName[fullName.length - 1];
-  return lastName + " , " + firstName
+  return lastName + ', ' + firstName;
 }
+console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  let winsPoints = wins * 3;
+  let tiesPoints = ties * 1;
+  let totalPoints = winsPoints + tiesPoints;
+  return totalPoints
 }
+console.log(footballPoints(14, 8));
 
 // Desafio 6
 function highestCount() {
