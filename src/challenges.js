@@ -21,8 +21,10 @@ function splitSentence(phrase) {
 console.log(splitSentence("Rumo ao topo"));
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(fullName) {
+  let firstName = fullName[0];
+  let lastName = fullName[fullName.length - 1];
+  return firstName + " " + lastName
 }
 
 // Desafio 5
