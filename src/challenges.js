@@ -24,7 +24,7 @@ console.log(splitSentence('go Trybe'));
 function concatName(fullName) {
   let firstName = fullName[0];
   let lastName = fullName[fullName.length - 1];
-  return lastName + ', ' + firstName;
+  return lastName, + ', ' + firstName;
 }
 console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 
@@ -33,14 +33,27 @@ function footballPoints(wins, ties) {
   let winsPoints = wins * 3;
   let tiesPoints = ties * 1;
   let totalPoints = winsPoints + tiesPoints;
-  return totalPoints
+  return totalPoints;
 }
 console.log(footballPoints(14, 8));
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(array) {
+  let repetition = 0;
+  let numberOfTimesRepeated = array[0];
+
+  for (let index = 0; index < array.length; index += 1) {
+    if (array[index] >= numberOfTimesRepeated) {
+      repetition += 1;
+      if (array[index] > numberOfTimesRepeated) {
+        repetition = 1;
+      }
+      numberOfTimesRepeated = array[index];
+    }
+  }
+  return repetition;
 }
+console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 
 // Desafio 7
 function catAndMouse() {
@@ -77,4 +90,4 @@ module.exports = {
   highestCount,
   splitSentence,
   techList,
-};
+}
