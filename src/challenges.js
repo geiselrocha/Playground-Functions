@@ -14,17 +14,17 @@ function calcArea(base, height) {
 console.log(calcArea());
 
 // Desafio 3
-function splitSentence(phrase) {
-  let phrase = phrase.split(" ");
+function splitSentence(neWPhrase) {
+  let phrase = neWPhrase.split(" ");
   return phrase;
 }
-console.log(splitSentence("Rumo ao topo"));
+console.log(splitSentence("go Trybe"));
 
 // Desafio 4
 function concatName(fullName) {
   let firstName = fullName[0];
   let lastName = fullName[fullName.length - 1];
-  return firstName + " " + lastName
+  return lastName + " , " + firstName
 }
 
 // Desafio 5
