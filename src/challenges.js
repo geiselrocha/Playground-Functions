@@ -59,11 +59,10 @@ console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 function catAndMouse(cat1, cat2, mouse) {
   if (Math.abs(cat1 - mouse) < Math.abs(cat2 - mouse)) {
     return 'cat1';
-  } if (Math.abs(cat2 - mouse) < Math.abs(cat1 - mouse)) {
+  } else if (Math.abs(cat2 - mouse) < Math.abs(cat1 - mouse)) {
     return 'cat2';
-  } else {
-    return 'Os gatos trombam e o rato foge';
   }
+  return 'Os gatos trombam e o rato foge';
 }
 console.log(catAndMouse(0, 6, 12));
 
@@ -72,16 +71,16 @@ function fizzBuzz(array) {
   let fizzBuzzArray = [];
   for (let index = 0; index < array.length; index += 1) {
     if (array[index] % 3 === 0 && array[index] % 5 === 0) {
-      fizzBuzzArray.push("fizzBuzz");
+      fizzBuzzArray.push('fizzBuzz');
     }
     else if (array[index] % 3 === 0) {
-      fizzBuzzArray.push("fizz");
+      fizzBuzzArray.push('fizz');
     }
     else if (array[index] % 5 === 0) {
-      fizzBuzzArray.push("buzz");
+      fizzBuzzArray.push('buzz');
     }
     else {
-      fizzBuzzArray.push("bug!");
+      fizzBuzzArray.push('bug!');
     }
   }
   return fizzBuzzArray;
@@ -89,12 +88,55 @@ function fizzBuzz(array) {
 console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(string) {
+  let newString = string.split("");
+  let newString2 = "";
+  for (let index = 0; index < newString.length; index += 1) {
+    if (newString[index] === "a") {
+      newString[index] = 1;
+    }
+    else if (newString[index] === "e") {
+      newString[index] = 2;
+    }
+    else if (newString[index] === "i") {
+      newString[index] = 3;
+    }
+    else if (newString[index] === "o") {
+      newString[index] = 4;
+    }
+    else if (newString[index] === "u") {
+      newString[index] = 5;
+    }
+  }
+  newString2 = newString.join("");
+  return newString2;
 }
-function decode() {
-  // seu código aqui
+console.log(encode("hi there"));
+
+function decode(string) {
+  let newString = string.split("");
+  let newString2 = "";
+  for (let index = 0; index < newString.length; index += 1) {
+    if (newString[index] === "1") {
+      newString[index] = "a";
+    }
+    else if (newString[index] === "2") {
+      newString[index] = "e";
+    }
+    else if (newString[index] === "3") {
+      newString[index] = "i";
+    }
+    else if (newString[index] === "4") {
+      newString[index] = "o";
+    }
+    else if (newString[index] === "5") {
+      newString[index] = "u";
+    }
+  }
+  newString2 = newString.join("");
+  return newString2;
 }
+console.log(decode("h2ll4"));
 
 // Desafio 10
 function techList() {
