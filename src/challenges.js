@@ -56,15 +56,18 @@ function highestCount(array) {
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 
 // Desafio 7
-function catAndMouse(cat1, cat2, mouse) {
-  if (Math.abs(cat1 - mouse) < Math.abs(cat2 - mouse)) {
+function catAndMouse(mouse, cat1, cat2) {
+  let positionCat1 = Math.abs(cat1 - mouse);
+  let positionCat2 = Math.abs(cat2 - mouse);
+  if (positionCat1 < positionCat2) {
     return 'cat1';
-  } else if (Math.abs(cat2 - mouse) < Math.abs(cat1 - mouse)) {
+  } else if (positionCat1 > positionCat2) {
     return 'cat2';
+  } else {
+    return 'os gatos trombam e o rato foge';
   }
-  return 'Os gatos trombam e o rato foge';
 }
-console.log(catAndMouse(0, 6, 12));
+console.log(catAndMouse(0, 2, 3));
 
 // Desafio 8
 function fizzBuzz(array) {
@@ -72,14 +75,11 @@ function fizzBuzz(array) {
   for (let index = 0; index < array.length; index += 1) {
     if (array[index] % 3 === 0 && array[index] % 5 === 0) {
       fizzBuzzArray.push('fizzBuzz');
-    }
-    else if (array[index] % 3 === 0) {
+    } else if (array[index] % 3 === 0) {
       fizzBuzzArray.push('fizz');
-    }
-    else if (array[index] % 5 === 0) {
+    } else if (array[index] % 5 === 0) {
       fizzBuzzArray.push('buzz');
-    }
-    else {
+    } else {
       fizzBuzzArray.push('bug!');
     }
   }
@@ -92,51 +92,43 @@ function encode(string) {
   let newString = string.split("");
   let newString2 = "";
   for (let index = 0; index < newString.length; index += 1) {
-    if (newString[index] === "a") {
+    if (newString[index] === 'a') {
       newString[index] = 1;
-    }
-    else if (newString[index] === "e") {
+    } else if (newString[index] === 'e') {
       newString[index] = 2;
-    }
-    else if (newString[index] === "i") {
+    } else if (newString[index] === 'i') {
       newString[index] = 3;
-    }
-    else if (newString[index] === "o") {
+    } else if (newString[index] === 'o') {
       newString[index] = 4;
-    }
-    else if (newString[index] === "u") {
+    } else if (newString[index] === 'u') {
       newString[index] = 5;
     }
   }
   newString2 = newString.join("");
   return newString2;
 }
-console.log(encode("hi there"));
+console.log(encode('hi there'));
 
 function decode(string) {
   let newString = string.split("");
   let newString2 = "";
   for (let index = 0; index < newString.length; index += 1) {
-    if (newString[index] === "1") {
-      newString[index] = "a";
-    }
-    else if (newString[index] === "2") {
-      newString[index] = "e";
-    }
-    else if (newString[index] === "3") {
-      newString[index] = "i";
-    }
-    else if (newString[index] === "4") {
-      newString[index] = "o";
-    }
-    else if (newString[index] === "5") {
-      newString[index] = "u";
+    if (newString[index] === '1') {
+      newString[index] = 'a';
+    } else if (newString[index] === '2') {
+      newString[index] = 'e';
+    } else if (newString[index] === '3') {
+      newString[index] = 'i';
+    } else if (newString[index] === '4') {
+      newString[index] = 'o';
+    } else if (newString[index] === '5') {
+      newString[index] = 'u';
     }
   }
-  newString2 = newString.join("");
+  newString2 = newString.join('');
   return newString2;
 }
-console.log(decode("h2ll4"));
+console.log(decode('h2ll4'));
 
 // Desafio 10
 function techList() {
