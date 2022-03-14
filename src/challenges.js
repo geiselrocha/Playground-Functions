@@ -24,7 +24,7 @@ console.log(splitSentence('go Trybe'));
 function concatName(fullName) {
   let firstName = fullName[0];
   let lastName = fullName[fullName.length - 1];
-  return lastName + ', ' + firstName;
+  return `${lastName}, ${firstName}`;
 }
 console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 
@@ -56,16 +56,16 @@ function highestCount(array) {
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 
 // Desafio 7
+// https://stackoverflow.com/questions/46875442/unnecessary-else-after-return-no-else-return
 function catAndMouse(mouse, cat1, cat2) {
   let positionCat1 = Math.abs(cat1 - mouse);
   let positionCat2 = Math.abs(cat2 - mouse);
   if (positionCat1 < positionCat2) {
     return 'cat1';
-  } else if (positionCat1 > positionCat2) {
+  } if (positionCat1 > positionCat2) {
     return 'cat2';
-  } else {
-    return 'os gatos trombam e o rato foge';
   }
+  return 'os gatos trombam e o rato foge';
 }
 console.log(catAndMouse(0, 2, 3));
 
@@ -89,8 +89,8 @@ console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
 function encode(string) {
-  let newString = string.split("");
-  let newString2 = "";
+  let newString = string.split('');
+  let newString2 = '';
   for (let index = 0; index < newString.length; index += 1) {
     if (newString[index] === 'a') {
       newString[index] = 1;
@@ -104,14 +104,14 @@ function encode(string) {
       newString[index] = 5;
     }
   }
-  newString2 = newString.join("");
+  newString2 = newString.join('');
   return newString2;
 }
 console.log(encode('hi there'));
 
 function decode(string) {
-  let newString = string.split("");
-  let newString2 = "";
+  let newString = string.split('');
+  let newString2 = '';
   for (let index = 0; index < newString.length; index += 1) {
     if (newString[index] === '1') {
       newString[index] = 'a';
@@ -131,9 +131,19 @@ function decode(string) {
 console.log(decode('h2ll4'));
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(technologyNames, name) {
+  let tech = [];
+  let order = technologyNames.sort();
+  if (technologyNames.length === 0) {
+    return 'Vazio!';
+  } if (technologyNames.length !== 0) {
+    for (let index = 0; index < order.length; index += 1) {
+      tech.push({ tech: order[index], name });
+    }
+    return tech;
+  }
 }
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Rocha'));
 
 module.exports = {
   calcArea,
