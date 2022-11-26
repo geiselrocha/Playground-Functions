@@ -38,22 +38,36 @@ function footballPoints(wins, ties) {
 console.log(footballPoints(14, 8));
 
 // Desafio 6
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity
 function highestCount(array) {
-  let repetition = 0;
-  let numberOfTimesRepeated = array[0];
-
-  for (let index = 0; index < array.length; index += 1) {
-    if (array[index] >= numberOfTimesRepeated) {
-      repetition += 1;
-      if (array[index] > numberOfTimesRepeated) {
-        repetition = 1;
-      }
-      numberOfTimesRepeated = array[index];
+  const amountOfTimes = { number: -Infinity, repetition: 0 };
+  for (let number of array) {
+    if (number > amountOfTimes.number) {
+      amountOfTimes.number = number;
+      amountOfTimes.repetition = 0;
+    }
+    if (amountOfTimes.number === number) {
+      amountOfTimes.repetition += 1;
     }
   }
-  return repetition;
+  return amountOfTimes.repetition;
 }
+
+// let repetition = 0;
+//   let numberOfTimesRepeated = array[0];
+//   for (let index = 0; index < array.length; index += 1) {
+//     if (array[index] >= numberOfTimesRepeated) {
+//       repetition += 1;
+//       if (array[index] > numberOfTimesRepeated) {
+//         repetition = 1;
+//       }
+//       numberOfTimesRepeated = array[index];
+//     }
+//   }
+//   return repetition;
+
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
+console.log(highestCount([0, 4, 4, 4, 9, 2, 1]));
 
 // Desafio 7
 // https://stackoverflow.com/questions/46875442/unnecessary-else-after-return-no-else-return
