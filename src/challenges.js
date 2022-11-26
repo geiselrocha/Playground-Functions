@@ -84,22 +84,47 @@ function catAndMouse(mouse, cat1, cat2) {
 console.log(catAndMouse(0, 2, 3));
 
 // Desafio 8
-function fizzBuzz(array) {
-  let fizzBuzzArray = [];
-  for (let index = 0; index < array.length; index += 1) {
-    if (array[index] % 3 === 0 && array[index] % 5 === 0) {
-      fizzBuzzArray.push('fizzBuzz');
-    } else if (array[index] % 3 === 0) {
-      fizzBuzzArray.push('fizz');
-    } else if (array[index] % 5 === 0) {
-      fizzBuzzArray.push('buzz');
-    } else {
-      fizzBuzzArray.push('bug!');
+function fizzOrBuzz(number) {
+  let fizzBuzzArray = '';
+  if (number % 3 === 0) {
+    fizzBuzzArray = 'fizz';
+    if (number % 5 === 0) {
+      fizzBuzzArray += 'Buzz';
     }
+  } else if (number % 5 === 0) {
+    fizzBuzzArray = 'buzz';
+  } else {
+    fizzBuzzArray = 'bug!';
   }
   return fizzBuzzArray;
 }
+
+function fizzBuzz(arrayOfNumbers) {
+  const arrayFizzBuzz = [];
+  for (let number of arrayOfNumbers) {
+    arrayFizzBuzz.push(fizzOrBuzz(number));
+  }
+  return arrayFizzBuzz;
+}
+
+// function fizzBuzz(array) {
+//   let fizzBuzzArray = [];
+//   for (let index = 0; index < array.length; index += 1) {
+//     if (array[index] % 3 === 0 && array[index] % 5 === 0) {
+//       fizzBuzzArray.push('fizzBuzz');
+//     } else if (array[index] % 3 === 0) {
+//       fizzBuzzArray.push('fizz');
+//     } else if (array[index] % 5 === 0) {
+//       fizzBuzzArray.push('buzz');
+//     } else {
+//       fizzBuzzArray.push('bug!');
+//     }
+//   }
+//   return fizzBuzzArray;
+// }
 console.log(fizzBuzz([2, 15, 7, 9, 45]));
+console.log(fizzBuzz([7, 9]));
+console.log(fizzBuzz([9, 25]));
 
 // Desafio 9
 function encode(string) {
