@@ -65,7 +65,6 @@ function highestCount(array) {
 //     }
 //   }
 //   return repetition;
-
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 console.log(highestCount([0, 4, 4, 4, 9, 2, 1]));
 
@@ -107,7 +106,6 @@ function fizzBuzz(arrayOfNumbers) {
   return arrayFizzBuzz;
 }
 
-// function fizzBuzz(array) {
 //   let fizzBuzzArray = [];
 //   for (let index = 0; index < array.length; index += 1) {
 //     if (array[index] % 3 === 0 && array[index] % 5 === 0) {
@@ -127,46 +125,65 @@ console.log(fizzBuzz([7, 9]));
 console.log(fizzBuzz([9, 25]));
 
 // Desafio 9
+// https://stackoverflow.com/questions/64503733/how-can-i-extract-vowels-in-a-javascript-string
 function encode(string) {
-  let newString = string.split('');
-  let newString2 = '';
-  for (let index = 0; index < newString.length; index += 1) {
-    if (newString[index] === 'a') {
-      newString[index] = 1;
-    } else if (newString[index] === 'e') {
-      newString[index] = 2;
-    } else if (newString[index] === 'i') {
-      newString[index] = 3;
-    } else if (newString[index] === 'o') {
-      newString[index] = 4;
-    } else if (newString[index] === 'u') {
-      newString[index] = 5;
-    }
-  }
-  newString2 = newString.join('');
-  return newString2;
+  let a = string.replace(/[a]/g, '1');
+  let e = a.replace(/e/g, '2');
+  let i = e.replace(/i/g, '3');
+  let o = i.replace(/o/g, '4');
+  let u = o.replace(/u/g, '5');
+  let result = u;
+  return result;
 }
+
+//   let newString = string.split('');
+//   let newString2 = '';
+//   for (let index = 0; index < newString.length; index += 1) {
+//     if (newString[index] === 'a') {
+//       newString[index] = 1;
+//     } else if (newString[index] === 'e') {
+//       newString[index] = 2;
+//     } else if (newString[index] === 'i') {
+//       newString[index] = 3;
+//     } else if (newString[index] === 'o') {
+//       newString[index] = 4;
+//     } else if (newString[index] === 'u') {
+//       newString[index] = 5;
+//     }
+//   }
+//   newString2 = newString.join('');
+//   return newString2;
+// }
 console.log(encode('hi there'));
 
 function decode(string) {
-  let newString = string.split('');
-  let newString2 = '';
-  for (let index = 0; index < newString.length; index += 1) {
-    if (newString[index] === '1') {
-      newString[index] = 'a';
-    } else if (newString[index] === '2') {
-      newString[index] = 'e';
-    } else if (newString[index] === '3') {
-      newString[index] = 'i';
-    } else if (newString[index] === '4') {
-      newString[index] = 'o';
-    } else if (newString[index] === '5') {
-      newString[index] = 'u';
-    }
-  }
-  newString2 = newString.join('');
-  return newString2;
+  let a1 = string.replace(/1/g, 'a');
+  let e2 = a1.replace(/2/g, 'e');
+  let i3 = e2.replace(/3/g, 'i');
+  let o4 = i3.replace(/4/g, 'o');
+  let u5 = o4.replace(/5/g, 'u');
+  let result = u5;
+  return result;
 }
+
+//   let newString = string.split('');
+//   let newString2 = '';
+//   for (let index = 0; index < newString.length; index += 1) {
+//     if (newString[index] === '1') {
+//       newString[index] = 'a';
+//     } else if (newString[index] === '2') {
+//       newString[index] = 'e';
+//     } else if (newString[index] === '3') {
+//       newString[index] = 'i';
+//     } else if (newString[index] === '4') {
+//       newString[index] = 'o';
+//     } else if (newString[index] === '5') {
+//       newString[index] = 'u';
+//     }
+//   }
+//   newString2 = newString.join('');
+//   return newString2;
+// }
 console.log(decode('h2ll4'));
 
 // Desafio 10
