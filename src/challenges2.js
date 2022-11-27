@@ -9,16 +9,14 @@ function counterNumber(array) {
   return false;
 }
 // Desafio 11
-function generatePhoneNumber(array) {
+function generatePhoneNumber(arr) {
   let result;
-  if (array.length !== 11) {
+  if (arr.length !== 11) {
     result = 'Array com tamanho incorreto.';
-  } else if (array.join('').length > 11 || counterNumber(array)) {
+  } else if (arr.join('').length > 11 || counterNumber(arr)) {
     result = 'não é possível gerar um número de telefone com esses valores';
   } else {
-    result = `(${array.slice(0, 2).join('')}) 
-    ${array.slice(2, 7).join('')}-
-    ${array.slice(7).join('')}`;
+    result = `(${arr.slice(0, 2).join('')}) ${arr.slice(2, 7).join('')}-${arr.slice(7).join('')}`;
   }
   return result;
 }
@@ -32,8 +30,16 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  let stringNumber = string.match(/\d+/g).map(Number);
+  let water = 0;
+  for (const number of stringNumber) {
+    water += number;
+  }
+  if (water === 1) {
+    return `${water} copo de água`;
+  }
+  return `${water} copos de água`;
 }
 
 module.exports = {
