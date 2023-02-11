@@ -23,10 +23,7 @@ function generatePhoneNumber(arr) {
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  if (lineA < lineB + lineC && lineB < lineA + lineC && lineC < lineA + lineB) {
-    return true;
-  }
-  return false;
+  return !!(lineA < lineB + lineC && lineB < lineA + lineC && lineC < lineA + lineB);
 }
 
 // Desafio 13
